@@ -13,6 +13,7 @@
 		ABBAF64B2754EFA400DF17C3 /* TasBase.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBAF63D2754EFA400DF17C3 /* TasBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABBAF6582754EFFF00DF17C3 /* TSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */; };
 		ABBAF65A2754F0CB00DF17C3 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */; };
+		ABBAF65C2754F1BC00DF17C3 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF65B2754F1BC00DF17C3 /* BaseTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		ABBAF6492754EFA400DF17C3 /* TasBaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasBaseTests.swift; sourceTree = "<group>"; };
 		ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSViewController.swift; sourceTree = "<group>"; };
 		ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
+		ABBAF65B2754F1BC00DF17C3 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		ABBAF63C2754EFA400DF17C3 /* TasBase */ = {
 			isa = PBXGroup;
 			children = (
+				ABBAF65D2754F1D500DF17C3 /* BaseTableView */,
 				ABBAF63D2754EFA400DF17C3 /* TasBase.h */,
 				ABBAF63E2754EFA400DF17C3 /* TasBase.docc */,
 				ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */,
@@ -89,6 +92,14 @@
 				ABBAF6492754EFA400DF17C3 /* TasBaseTests.swift */,
 			);
 			path = TasBaseTests;
+			sourceTree = "<group>";
+		};
+		ABBAF65D2754F1D500DF17C3 /* BaseTableView */ = {
+			isa = PBXGroup;
+			children = (
+				ABBAF65B2754F1BC00DF17C3 /* BaseTableView.swift */,
+			);
+			path = BaseTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBAF65C2754F1BC00DF17C3 /* BaseTableView.swift in Sources */,
 				ABBAF63F2754EFA400DF17C3 /* TasBase.docc in Sources */,
 				ABBAF65A2754F0CB00DF17C3 /* BaseXibView.swift in Sources */,
 				ABBAF6582754EFFF00DF17C3 /* TSViewController.swift in Sources */,
