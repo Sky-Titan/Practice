@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import TasBase
 
-class ViewController: UIViewController {
+class ViewController: TSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
