@@ -12,6 +12,7 @@
 		ABBAF64A2754EFA400DF17C3 /* TasBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6492754EFA400DF17C3 /* TasBaseTests.swift */; };
 		ABBAF64B2754EFA400DF17C3 /* TasBase.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBAF63D2754EFA400DF17C3 /* TasBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABBAF6582754EFFF00DF17C3 /* TSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */; };
+		ABBAF65A2754F0CB00DF17C3 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		ABBAF6442754EFA400DF17C3 /* TasBaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasBaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBAF6492754EFA400DF17C3 /* TasBaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasBaseTests.swift; sourceTree = "<group>"; };
 		ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSViewController.swift; sourceTree = "<group>"; };
+		ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				ABBAF63D2754EFA400DF17C3 /* TasBase.h */,
 				ABBAF63E2754EFA400DF17C3 /* TasBase.docc */,
 				ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */,
+				ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */,
 			);
 			path = TasBase;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABBAF63F2754EFA400DF17C3 /* TasBase.docc in Sources */,
+				ABBAF65A2754F0CB00DF17C3 /* BaseXibView.swift in Sources */,
 				ABBAF6582754EFFF00DF17C3 /* TSViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

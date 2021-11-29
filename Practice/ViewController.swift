@@ -14,7 +14,4 @@ class ViewController: TSViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-
