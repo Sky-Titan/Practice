@@ -14,6 +14,8 @@
 		ABBAF60D2754E5EF00DF17C3 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF60C2754E5EF00DF17C3 /* String+.swift */; };
 		ABBAF60F2754E62A00DF17C3 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF60E2754E62A00DF17C3 /* NSAttributedString+.swift */; };
 		ABBAF6112754E7D000DF17C3 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6102754E7D000DF17C3 /* Collection+.swift */; };
+		ABBAF6132754E90000DF17C3 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6122754E90000DF17C3 /* StringExtensionTests.swift */; };
+		ABBAF6152754E90E00DF17C3 /* CollectionExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6142754E90E00DF17C3 /* CollectionExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,8 @@
 		ABBAF60C2754E5EF00DF17C3 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		ABBAF60E2754E62A00DF17C3 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
 		ABBAF6102754E7D000DF17C3 /* Collection+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+.swift"; sourceTree = "<group>"; };
+		ABBAF6122754E90000DF17C3 /* StringExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensionTests.swift; sourceTree = "<group>"; };
+		ABBAF6142754E90E00DF17C3 /* CollectionExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				ABBAF6012754E56F00DF17C3 /* TasUtilityTests.swift */,
+				ABBAF6122754E90000DF17C3 /* StringExtensionTests.swift */,
+				ABBAF6142754E90E00DF17C3 /* CollectionExtensionTests.swift */,
 			);
 			path = TasUtilityTests;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABBAF6132754E90000DF17C3 /* StringExtensionTests.swift in Sources */,
+				ABBAF6152754E90E00DF17C3 /* CollectionExtensionTests.swift in Sources */,
 				ABBAF6022754E56F00DF17C3 /* TasUtilityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

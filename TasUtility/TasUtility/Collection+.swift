@@ -8,7 +8,11 @@
 import UIKit
 
 extension Collection {
-    var isNotEmpty: Bool {
+    public var isNotEmpty: Bool {
         return !isEmpty
+    }
+    
+    public subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }
