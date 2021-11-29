@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../TasUtility/TasUtility.xcodeproj">
+      location = "group:TasUtility/TasUtility.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Practice.xcodeproj">
