@@ -17,6 +17,7 @@
 		ABBAF6552754EFC000DF17C3 /* TasBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6542754EFC000DF17C3 /* TasBase.framework */; };
 		ABC9A0D92756451D002B3C3C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A0D82756451D002B3C3C /* ListViewModel.swift */; };
 		ABC9A0DB27564599002B3C3C /* RedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A0DA27564599002B3C3C /* RedColorView.swift */; };
+		ABFE06CE275C8DCF001DC24D /* DragDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE06CD275C8DCF001DC24D /* DragDotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		ABBAF6542754EFC000DF17C3 /* TasBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TasBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC9A0D82756451D002B3C3C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		ABC9A0DA27564599002B3C3C /* RedColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedColorView.swift; sourceTree = "<group>"; };
+		ABFE06CD275C8DCF001DC24D /* DragDotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				AB54AD72275395F4001E9F93 /* Info.plist */,
 				ABC9A0D82756451D002B3C3C /* ListViewModel.swift */,
 				ABC9A0DA27564599002B3C3C /* RedColorView.swift */,
+				ABFE06CD275C8DCF001DC24D /* DragDotView.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				ABC9A0DB27564599002B3C3C /* RedColorView.swift in Sources */,
 				AB54AD65275395F4001E9F93 /* AppDelegate.swift in Sources */,
 				ABC9A0D92756451D002B3C3C /* ListViewModel.swift in Sources */,
+				ABFE06CE275C8DCF001DC24D /* DragDotView.swift in Sources */,
 				AB54AD67275395F4001E9F93 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
