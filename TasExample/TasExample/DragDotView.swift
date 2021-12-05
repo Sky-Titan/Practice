@@ -7,14 +7,14 @@
 
 import UIKit
 
-class DraggableView: UIView {
+public class DraggableView: UIView {
  
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         moveCenter(to: touches)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
         moveCenter(to: touches)
     }
@@ -30,7 +30,7 @@ class DraggableView: UIView {
     }
 }
 
-class DragDotView: DraggableView {
+public class DragDotView: DraggableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
