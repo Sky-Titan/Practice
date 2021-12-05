@@ -14,6 +14,9 @@
 		ABBAF6582754EFFF00DF17C3 /* TSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */; };
 		ABBAF65A2754F0CB00DF17C3 /* BaseXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */; };
 		ABBAF65C2754F1BC00DF17C3 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF65B2754F1BC00DF17C3 /* BaseTableView.swift */; };
+		ABC9A0D227563A6F002B3C3C /* BaseTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A0D127563A6F002B3C3C /* BaseTableCellView.swift */; };
+		ABC9A0D527564037002B3C3C /* TasUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9A0D427564037002B3C3C /* TasUtility.framework */; };
+		ABC9A0D627564037002B3C3C /* TasUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9A0D427564037002B3C3C /* TasUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		ABC9A0D727564037002B3C3C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ABC9A0D627564037002B3C3C /* TasUtility.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		ABBAF63A2754EFA400DF17C3 /* TasBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TasBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBAF63D2754EFA400DF17C3 /* TasBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasBase.h; sourceTree = "<group>"; };
@@ -35,6 +52,8 @@
 		ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSViewController.swift; sourceTree = "<group>"; };
 		ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXibView.swift; sourceTree = "<group>"; };
 		ABBAF65B2754F1BC00DF17C3 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		ABC9A0D127563A6F002B3C3C /* BaseTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableCellView.swift; sourceTree = "<group>"; };
+		ABC9A0D427564037002B3C3C /* TasUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TasUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC9A0D527564037002B3C3C /* TasUtility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +82,7 @@
 				ABBAF63C2754EFA400DF17C3 /* TasBase */,
 				ABBAF6482754EFA400DF17C3 /* TasBaseTests */,
 				ABBAF63B2754EFA400DF17C3 /* Products */,
+				ABC9A0D327564037002B3C3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +119,17 @@
 			isa = PBXGroup;
 			children = (
 				ABBAF65B2754F1BC00DF17C3 /* BaseTableView.swift */,
+				ABC9A0D127563A6F002B3C3C /* BaseTableCellView.swift */,
 			);
 			path = BaseTableView;
+			sourceTree = "<group>";
+		};
+		ABC9A0D327564037002B3C3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABC9A0D427564037002B3C3C /* TasUtility.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +154,7 @@
 				ABBAF6362754EFA400DF17C3 /* Sources */,
 				ABBAF6372754EFA400DF17C3 /* Frameworks */,
 				ABBAF6382754EFA400DF17C3 /* Resources */,
+				ABC9A0D727564037002B3C3C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABBAF65C2754F1BC00DF17C3 /* BaseTableView.swift in Sources */,
+				ABC9A0D227563A6F002B3C3C /* BaseTableCellView.swift in Sources */,
 				ABBAF63F2754EFA400DF17C3 /* TasBase.docc in Sources */,
 				ABBAF65A2754F0CB00DF17C3 /* BaseXibView.swift in Sources */,
 				ABBAF6582754EFFF00DF17C3 /* TSViewController.swift in Sources */,
@@ -372,6 +404,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,6 +433,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

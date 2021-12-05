@@ -15,6 +15,8 @@
 		ABBAF6182754EA8C00DF17C3 /* TasUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6172754EA8C00DF17C3 /* TasUtility.framework */; };
 		ABBAF61C2754ED4600DF17C3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBAF61B2754ED4600DF17C3 /* ViewController.xib */; };
 		ABBAF6552754EFC000DF17C3 /* TasBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6542754EFC000DF17C3 /* TasBase.framework */; };
+		ABC9A0D92756451D002B3C3C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A0D82756451D002B3C3C /* ListViewModel.swift */; };
+		ABC9A0DB27564599002B3C3C /* RedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A0DA27564599002B3C3C /* RedColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		ABBAF6172754EA8C00DF17C3 /* TasUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TasUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBAF61B2754ED4600DF17C3 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		ABBAF6542754EFC000DF17C3 /* TasBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TasBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC9A0D82756451D002B3C3C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		ABC9A0DA27564599002B3C3C /* RedColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 				AB54AD6D275395F4001E9F93 /* Assets.xcassets */,
 				AB54AD6F275395F4001E9F93 /* LaunchScreen.storyboard */,
 				AB54AD72275395F4001E9F93 /* Info.plist */,
+				ABC9A0D82756451D002B3C3C /* ListViewModel.swift */,
+				ABC9A0DA27564599002B3C3C /* RedColorView.swift */,
 			);
 			path = Practice;
 			sourceTree = "<group>";
@@ -155,7 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB54AD69275395F4001E9F93 /* ViewController.swift in Sources */,
+				ABC9A0DB27564599002B3C3C /* RedColorView.swift in Sources */,
 				AB54AD65275395F4001E9F93 /* AppDelegate.swift in Sources */,
+				ABC9A0D92756451D002B3C3C /* ListViewModel.swift in Sources */,
 				AB54AD67275395F4001E9F93 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
