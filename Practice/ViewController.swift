@@ -7,13 +7,23 @@
 
 import UIKit
 import TasBase
+import TasExample
 
 class ViewController: TSViewController {
 
-    
+    var number: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-  
+    
+    @IBAction func openClick(_ sender: Any) {
+        let vc = ViewController()
+        vc.number = number + 1
+        ViewManager.shared.pushViewController(viewController: vc, animated: true)
+    }
+    
+    @IBAction func closeClick(_ sender: Any) {
+        ViewManager.shared.popViewController(animated: true)
+    }
 }

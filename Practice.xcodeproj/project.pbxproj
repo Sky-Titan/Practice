@@ -12,13 +12,15 @@
 		AB54AD69275395F4001E9F93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB54AD68275395F4001E9F93 /* ViewController.swift */; };
 		AB54AD6E275395F4001E9F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB54AD6D275395F4001E9F93 /* Assets.xcassets */; };
 		AB54AD71275395F4001E9F93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB54AD6F275395F4001E9F93 /* LaunchScreen.storyboard */; };
-		ABBAF6182754EA8C00DF17C3 /* TasUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6172754EA8C00DF17C3 /* TasUtility.framework */; };
 		ABBAF61C2754ED4600DF17C3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABBAF61B2754ED4600DF17C3 /* ViewController.xib */; };
-		ABBAF6552754EFC000DF17C3 /* TasBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6542754EFC000DF17C3 /* TasBase.framework */; };
 		ABC9A0D92756451D002B3C3C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A0D82756451D002B3C3C /* ListViewModel.swift */; };
 		ABC9A0DB27564599002B3C3C /* RedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A0DA27564599002B3C3C /* RedColorView.swift */; };
 		ABFE06F8275C9871001DC24D /* TasExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE06F7275C9871001DC24D /* TasExample.framework */; };
 		ABFE06F9275C9871001DC24D /* TasExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE06F7275C9871001DC24D /* TasExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ABFE0702275CA3EB001DC24D /* TasBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6542754EFC000DF17C3 /* TasBase.framework */; };
+		ABFE0703275CA3EB001DC24D /* TasBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6542754EFC000DF17C3 /* TasBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ABFE0704275CA3EC001DC24D /* TasUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6172754EA8C00DF17C3 /* TasUtility.framework */; };
+		ABFE0705275CA3EC001DC24D /* TasUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF6172754EA8C00DF17C3 /* TasUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,7 +30,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ABFE0703275CA3EB001DC24D /* TasBase.framework in Embed Frameworks */,
 				ABFE06F9275C9871001DC24D /* TasExample.framework in Embed Frameworks */,
+				ABFE0705275CA3EC001DC24D /* TasUtility.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,9 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABBAF6552754EFC000DF17C3 /* TasBase.framework in Frameworks */,
 				ABFE06F8275C9871001DC24D /* TasExample.framework in Frameworks */,
-				ABBAF6182754EA8C00DF17C3 /* TasUtility.framework in Frameworks */,
+				ABFE0702275CA3EB001DC24D /* TasBase.framework in Frameworks */,
+				ABFE0704275CA3EC001DC24D /* TasUtility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

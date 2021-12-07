@@ -7,11 +7,11 @@
 
 import UIKit
 
-typealias Degrees = CGFloat
-typealias Radians = CGFloat
+public typealias Degrees = CGFloat
+public typealias Radians = CGFloat
 
 extension Degrees {
-    func toRadians() -> Radians {
+    public func toRadians() -> Radians {
         return self * .pi / 180
     }
 }

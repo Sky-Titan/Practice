@@ -12,6 +12,9 @@
 		ABFE06E9275C9819001DC24D /* TasExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE06E8275C9819001DC24D /* TasExampleTests.swift */; };
 		ABFE06EA275C9819001DC24D /* TasExample.h in Headers */ = {isa = PBXBuildFile; fileRef = ABFE06DC275C9819001DC24D /* TasExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABFE06F6275C9853001DC24D /* DragDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE06F5275C9853001DC24D /* DragDotView.swift */; };
+		ABFE06FC275C9B5F001DC24D /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE06FB275C9B5F001DC24D /* CircleProgressView.swift */; };
+		ABFE06FF275C9E60001DC24D /* TasUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE06FE275C9E60001DC24D /* TasUtility.framework */; };
+		ABFE0700275C9E60001DC24D /* TasUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE06FE275C9E60001DC24D /* TasUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +27,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		ABFE0701275C9E60001DC24D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ABFE0700275C9E60001DC24D /* TasUtility.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		ABFE06D9275C9819001DC24D /* TasExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TasExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFE06DC275C9819001DC24D /* TasExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasExample.h; sourceTree = "<group>"; };
@@ -31,6 +48,8 @@
 		ABFE06E3275C9819001DC24D /* TasExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFE06E8275C9819001DC24D /* TasExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasExampleTests.swift; sourceTree = "<group>"; };
 		ABFE06F5275C9853001DC24D /* DragDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragDotView.swift; sourceTree = "<group>"; };
+		ABFE06FB275C9B5F001DC24D /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		ABFE06FE275C9E60001DC24D /* TasUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TasUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABFE06FF275C9E60001DC24D /* TasUtility.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +78,7 @@
 				ABFE06DB275C9819001DC24D /* TasExample */,
 				ABFE06E7275C9819001DC24D /* TasExampleTests */,
 				ABFE06DA275C9819001DC24D /* Products */,
+				ABFE06FD275C9E60001DC24D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,8 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				ABFE06DC275C9819001DC24D /* TasExample.h */,
-				ABFE06F5275C9853001DC24D /* DragDotView.swift */,
 				ABFE06DD275C9819001DC24D /* TasExample.docc */,
+				ABFE06FB275C9B5F001DC24D /* CircleProgressView.swift */,
+				ABFE06F5275C9853001DC24D /* DragDotView.swift */,
 			);
 			path = TasExample;
 			sourceTree = "<group>";
@@ -86,6 +108,14 @@
 				ABFE06E8275C9819001DC24D /* TasExampleTests.swift */,
 			);
 			path = TasExampleTests;
+			sourceTree = "<group>";
+		};
+		ABFE06FD275C9E60001DC24D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABFE06FE275C9E60001DC24D /* TasUtility.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +140,7 @@
 				ABFE06D5275C9819001DC24D /* Sources */,
 				ABFE06D6275C9819001DC24D /* Frameworks */,
 				ABFE06D7275C9819001DC24D /* Resources */,
+				ABFE0701275C9E60001DC24D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,6 +230,7 @@
 			files = (
 				ABFE06F6275C9853001DC24D /* DragDotView.swift in Sources */,
 				ABFE06DE275C9819001DC24D /* TasExample.docc in Sources */,
+				ABFE06FC275C9B5F001DC24D /* CircleProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +388,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,6 +417,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
