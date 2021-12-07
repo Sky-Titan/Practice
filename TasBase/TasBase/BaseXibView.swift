@@ -29,7 +29,11 @@ open class BaseXibView: UIView {
         if let name = nibName() {
             Bundle(for: type(of: self)).loadNibNamed(name, owner: self, options: nil)
             self.addSubview(contentView)
-            contentView.frame = frame
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+            contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+            contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+            contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
             didFinishLoadingNib()
         }
     }
