@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABB7ACC62760D23B009B0AC1 /* AnchorPointPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB7ACC52760D23B009B0AC1 /* AnchorPointPracticeView.swift */; };
 		ABFE06DE275C9819001DC24D /* TasExample.docc in Sources */ = {isa = PBXBuildFile; fileRef = ABFE06DD275C9819001DC24D /* TasExample.docc */; };
 		ABFE06E4275C9819001DC24D /* TasExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE06D9275C9819001DC24D /* TasExample.framework */; };
 		ABFE06E9275C9819001DC24D /* TasExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE06E8275C9819001DC24D /* TasExampleTests.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ABB7ACC52760D23B009B0AC1 /* AnchorPointPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorPointPracticeView.swift; sourceTree = "<group>"; };
 		ABFE06D9275C9819001DC24D /* TasExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TasExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFE06DC275C9819001DC24D /* TasExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasExample.h; sourceTree = "<group>"; };
 		ABFE06DD275C9819001DC24D /* TasExample.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TasExample.docc; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				ABFE06DD275C9819001DC24D /* TasExample.docc */,
 				ABFE06FB275C9B5F001DC24D /* CircleProgressView.swift */,
 				ABFE06F5275C9853001DC24D /* DragDotView.swift */,
+				ABB7ACC52760D23B009B0AC1 /* AnchorPointPracticeView.swift */,
 			);
 			path = TasExample;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				ABFE06F6275C9853001DC24D /* DragDotView.swift in Sources */,
 				ABFE06DE275C9819001DC24D /* TasExample.docc in Sources */,
 				ABFE06FC275C9B5F001DC24D /* CircleProgressView.swift in Sources */,
+				ABB7ACC62760D23B009B0AC1 /* AnchorPointPracticeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
