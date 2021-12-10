@@ -67,10 +67,9 @@ extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
         register(BaseTableCellView.self, forCellReuseIdentifier: frontViewModel.frontViewProperty.className)
         
         let cell = tableView.dequeueReusableCell(withIdentifier: frontViewModel.frontViewProperty.className, for: indexPath) as! BaseTableCellView
-        cell.contentView.subviews.forEach { view in
-            if let view = view as? FrontViewProtocol {
-                view.setViewModel(frontViewModel)
-            }
+        
+        if let view = cell.frontView as? FrontViewProtocol {
+            view.setViewModel(frontViewModel)
         }
         return cell
     }

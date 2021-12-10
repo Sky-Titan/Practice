@@ -10,6 +10,7 @@ import TasUtility
 
 class BaseTableCellView: UITableViewCell {
     
+    var frontView: UIView?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         guard let viewClass = reuseIdentifier else { return }
@@ -17,6 +18,7 @@ class BaseTableCellView: UITableViewCell {
         let view = type.init(frame: frame)
         contentView.addSubview(view)
         view.bindingToSuperview()
+        self.frontView = view
     }
     
     required init?(coder: NSCoder) {
