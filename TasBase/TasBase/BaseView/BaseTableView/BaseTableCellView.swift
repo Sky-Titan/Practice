@@ -6,18 +6,17 @@
 //
 
 import UIKit
+import TasUtility
 
 class BaseTableCellView: UITableViewCell {
     
-    init(style: UITableViewCell.CellStyle, reuseIdentifier: String?, viewModel: FrontViewModelProtocol) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        let type = NSClassFromString(viewModel.frontViewProperty.className) as! UIView.Type
+        guard let viewClass = reuseIdentifier else { return }
+        let type = NSClassFromString(viewClass) as! UIView.Type
         let view = type.init(frame: frame)
-        if let view = view as? FrontViewProtocol {
-            view.setViewModel(viewModel)
-        }
         contentView.addSubview(view)
-        
+        view.bindingToSuperview()
     }
     
     required init?(coder: NSCoder) {

@@ -13,7 +13,11 @@ class ListViewModel: BaseListViewModel {
     weak var delegate: BaseListViewModelDelegate?
     func resetModel() {
         frontSections = []
+        let section = FrontSection()
         
+        section.cellViewModels.append(ColorDummyViewModel(color: .red, height: 100))
+        section.cellViewModels.append(ColorDummyViewModel(color: .blue, height: 100))
+        frontSections.append(section)
         delegate?.viewModelRefreshed(self)
     }
 }

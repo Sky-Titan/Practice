@@ -18,6 +18,9 @@
 		ABC9A0D227563A6F002B3C3C /* BaseTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9A0D127563A6F002B3C3C /* BaseTableCellView.swift */; };
 		ABC9A0D527564037002B3C3C /* TasUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9A0D427564037002B3C3C /* TasUtility.framework */; };
 		ABC9A0D627564037002B3C3C /* TasUtility.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9A0D427564037002B3C3C /* TasUtility.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ABE978A5276342AB00B4DADC /* ColorDummyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33190727633F7300B297F3 /* ColorDummyViewModel.swift */; };
+		ABE978A6276342B400B4DADC /* ColorDummyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33190927633F7300B297F3 /* ColorDummyView.swift */; };
+		ABE978A7276342B700B4DADC /* ColorDummyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB33190A27633F7300B297F3 /* ColorDummyView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AB33190727633F7300B297F3 /* ColorDummyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDummyViewModel.swift; sourceTree = "<group>"; };
+		AB33190927633F7300B297F3 /* ColorDummyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorDummyView.swift; sourceTree = "<group>"; };
+		AB33190A27633F7300B297F3 /* ColorDummyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorDummyView.xib; sourceTree = "<group>"; };
 		AB4ED018275F705100976E1B /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		ABBAF63A2754EFA400DF17C3 /* TasBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TasBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBAF63D2754EFA400DF17C3 /* TasBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasBase.h; sourceTree = "<group>"; };
@@ -78,6 +84,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB33190827633F7300B297F3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AB33190727633F7300B297F3 /* ColorDummyViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AB33190B27633F7300B297F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB33190927633F7300B297F3 /* ColorDummyView.swift */,
+				AB33190A27633F7300B297F3 /* ColorDummyView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB33190C27633F7300B297F3 /* DummyView */ = {
+			isa = PBXGroup;
+			children = (
+				AB33190827633F7300B297F3 /* ViewModel */,
+				AB33190B27633F7300B297F3 /* View */,
+			);
+			path = DummyView;
+			sourceTree = "<group>";
+		};
+		AB3319102763412E00B297F3 /* TSViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */,
+			);
+			path = TSViewController;
+			sourceTree = "<group>";
+		};
+		AB3319112763413B00B297F3 /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */,
+				ABBAF65D2754F1D500DF17C3 /* BaseTableView */,
+			);
+			path = BaseView;
+			sourceTree = "<group>";
+		};
+		AB3319122763414C00B297F3 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				AB4ED018275F705100976E1B /* ViewManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		ABBAF6302754EFA400DF17C3 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +157,12 @@
 		ABBAF63C2754EFA400DF17C3 /* TasBase */ = {
 			isa = PBXGroup;
 			children = (
-				ABBAF65D2754F1D500DF17C3 /* BaseTableView */,
+				AB3319122763414C00B297F3 /* Manager */,
+				AB3319112763413B00B297F3 /* BaseView */,
+				AB3319102763412E00B297F3 /* TSViewController */,
+				AB33190C27633F7300B297F3 /* DummyView */,
 				ABBAF63D2754EFA400DF17C3 /* TasBase.h */,
 				ABBAF63E2754EFA400DF17C3 /* TasBase.docc */,
-				ABBAF6572754EFFF00DF17C3 /* TSViewController.swift */,
-				AB4ED018275F705100976E1B /* ViewManager.swift */,
-				ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */,
 			);
 			path = TasBase;
 			sourceTree = "<group>";
@@ -228,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE978A7276342B700B4DADC /* ColorDummyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +306,9 @@
 				AB4ED019275F705100976E1B /* ViewManager.swift in Sources */,
 				ABBAF65C2754F1BC00DF17C3 /* BaseTableView.swift in Sources */,
 				ABC9A0D227563A6F002B3C3C /* BaseTableCellView.swift in Sources */,
+				ABE978A5276342AB00B4DADC /* ColorDummyViewModel.swift in Sources */,
 				ABBAF63F2754EFA400DF17C3 /* TasBase.docc in Sources */,
+				ABE978A6276342B400B4DADC /* ColorDummyView.swift in Sources */,
 				ABBAF65A2754F0CB00DF17C3 /* BaseXibView.swift in Sources */,
 				ABBAF6582754EFFF00DF17C3 /* TSViewController.swift in Sources */,
 			);

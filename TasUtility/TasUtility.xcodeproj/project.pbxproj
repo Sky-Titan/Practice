@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB3318F427633C1F00B297F3 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3318F327633C1F00B297F3 /* UIView+.swift */; };
 		ABBAF5F72754E56F00DF17C3 /* TasUtility.docc in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF5F62754E56F00DF17C3 /* TasUtility.docc */; };
 		ABBAF5FD2754E56F00DF17C3 /* TasUtility.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF5F22754E56F00DF17C3 /* TasUtility.framework */; };
 		ABBAF6022754E56F00DF17C3 /* TasUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6012754E56F00DF17C3 /* TasUtilityTests.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB3318F327633C1F00B297F3 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		ABBAF5F22754E56F00DF17C3 /* TasUtility.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TasUtility.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBAF5F52754E56F00DF17C3 /* TasUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasUtility.h; sourceTree = "<group>"; };
 		ABBAF5F62754E56F00DF17C3 /* TasUtility.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TasUtility.docc; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				ABBAF6102754E7D000DF17C3 /* Collection+.swift */,
 				ABBAF60C2754E5EF00DF17C3 /* String+.swift */,
 				ABC9A0DC275645FE002B3C3C /* ScreenUtility.swift */,
+				AB3318F327633C1F00B297F3 /* UIView+.swift */,
 			);
 			path = TasUtility;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				ABBAF60D2754E5EF00DF17C3 /* String+.swift in Sources */,
 				ABBAF60F2754E62A00DF17C3 /* NSAttributedString+.swift in Sources */,
+				AB3318F427633C1F00B297F3 /* UIView+.swift in Sources */,
 				ABBAF5F72754E56F00DF17C3 /* TasUtility.docc in Sources */,
 				ABBAF6112754E7D000DF17C3 /* Collection+.swift in Sources */,
 				ABFE06CC275C8D1F001DC24D /* CGFloat+.swift in Sources */,

@@ -12,6 +12,8 @@ open class BaseTableView: UITableView {
     open var viewModel: BaseListViewModel? {
         didSet {
             
+            registerIdentifiers()
+            
         }
     }
     
@@ -28,6 +30,15 @@ open class BaseTableView: UITableView {
     private func doInit() {
         self.dataSource = self
         self.delegate = self
+    }
+    
+    private func registerIdentifiers() {
+        viewModel?.frontSections.forEach {
+            $0.cellViewModels.forEach { viewModel in
+                print("register \(viewModel.frontViewProperty.className)")
+                register(BaseTableCellView.self, forCellReuseIdentifier: viewModel.frontViewProperty.className)
+            }
+        }
     }
 }
 extension BaseTableView: BaseListViewModelDelegate {
@@ -52,18 +63,16 @@ extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let frontViewModel = viewModel?.viewModel(at: indexPath) {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: frontViewModel.frontViewProperty.className, for: indexPath) as? BaseTableCellView {
-                cell.contentView.subviews.forEach { view in
-                    if let view = view as? FrontViewProtocol {
-                        view.setViewModel(frontViewModel)
-                    }
-                }
-            } else {
-                return BaseTableCellView(style: .default, reuseIdentifier: frontViewModel.frontViewProperty.className, viewModel: frontViewModel)
+        guard let frontViewModel = viewModel?.viewModel(at: indexPath) else { fatalError() }
+        register(BaseTableCellView.self, forCellReuseIdentifier: frontViewModel.frontViewProperty.className)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: frontViewModel.frontViewProperty.className, for: indexPath) as! BaseTableCellView
+        cell.contentView.subviews.forEach { view in
+            if let view = view as? FrontViewProtocol {
+                view.setViewModel(frontViewModel)
             }
         }
-        fatalError("Cannot find tableView cell")
+        return cell
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -83,7 +92,7 @@ public protocol BaseListViewModel {
     func resetModel()
 }
 extension BaseListViewModel {
-    func viewModel(at indexPath: IndexPath) -> FrontViewModelProtocol? {
+    public func viewModel(at indexPath: IndexPath) -> FrontViewModelProtocol? {
         return frontSections[indexPath.section].cellViewModels[indexPath.row]
     }
 }
@@ -93,7 +102,11 @@ public protocol BaseListViewModelDelegate: AnyObject {
 }
 
 public class FrontSection {
-    var cellViewModels: [FrontViewModelProtocol] = []
+    public var cellViewModels: [FrontViewModelProtocol] = []
+    
+    public init() {
+        
+    }
 }
 
 public protocol FrontViewModelProtocol: AnyObject {
@@ -107,10 +120,10 @@ public protocol FrontViewProtocol: AnyObject {
 }
 
 public class FrontViewProperty {
-    var cellSize: CGSize
-    var className: String
+    public var cellSize: CGSize
+    public var className: String
     
-    init(cellSize: CGSize, className: String) {
+    public init(cellSize: CGSize, className: String) {
         self.cellSize = cellSize
         self.className = className
     }
