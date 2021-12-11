@@ -9,13 +9,7 @@ import UIKit
 
 open class BaseTableView: UITableView {
     
-    open var viewModel: BaseListViewModel? {
-        didSet {
-            
-            registerIdentifiers()
-            
-        }
-    }
+    public var viewModel: BaseListViewModel?
     
     public override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -28,22 +22,15 @@ open class BaseTableView: UITableView {
     }
     
     private func doInit() {
+        register(BaseTableCellView.self, forCellReuseIdentifier: "BaseTableCellView")
         self.dataSource = self
         self.delegate = self
-    }
-    
-    private func registerIdentifiers() {
-        viewModel?.frontSections.forEach {
-            $0.cellViewModels.forEach { viewModel in
-                print("register \(viewModel.frontViewProperty.className)")
-                register(BaseTableCellView.self, forCellReuseIdentifier: viewModel.frontViewProperty.className)
-            }
-        }
     }
 }
 extension BaseTableView: BaseListViewModelDelegate {
     
     public func viewModelRefreshed(_ viewModel: BaseListViewModel) {
+        self.viewModel = viewModel
         reloadData()
     }
 }
@@ -64,13 +51,8 @@ extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let frontViewModel = viewModel?.viewModel(at: indexPath) else { fatalError() }
-        register(BaseTableCellView.self, forCellReuseIdentifier: frontViewModel.frontViewProperty.className)
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: frontViewModel.frontViewProperty.className, for: indexPath) as! BaseTableCellView
-        
-        if let view = cell.frontView as? FrontViewProtocol {
-            view.setViewModel(frontViewModel)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BaseTableCellView", for: indexPath) as! BaseTableCellView
+        cell.setViewModel(frontViewModel)
         return cell
     }
 

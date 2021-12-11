@@ -15,8 +15,12 @@ class ListViewModel: BaseListViewModel {
         frontSections = []
         let section = FrontSection()
         
-        section.cellViewModels.append(ColorDummyViewModel(color: .red, height: 100))
-        section.cellViewModels.append(ColorDummyViewModel(color: .blue, height: 100))
+        for _ in 0..<6 {
+            section.cellViewModels.append(ColorDummyViewModel(color: .red, height: 300))
+            section.cellViewModels.append(ColorDummyViewModel(color: .blue, height: 150))
+        }
+        
+        
         frontSections.append(section)
         delegate?.viewModelRefreshed(self)
     }
