@@ -15,14 +15,16 @@ class ListViewModel: BaseListViewModel {
         frontSections = []
         let section = FrontSection()
         
-        for _ in 0..<6 {
-            section.cellViewModels.append(ColorDummyViewModel(color: .red, height: 300))
-            section.cellViewModels.append(ColorDummyViewModel(color: .blue, height: 150))
-        }
+        section.cellViewModels.append(ColorDummyViewModel(color: .red, height: 1000))
         
-        //section.headerViewModel = ColorDummyViewModel(color: .green, height: 20)
-        //section.footerViewModel = ColorDummyViewModel(color: .brown, height: 20)
+        section.headerViewModel = ColorDummyViewModel(color: .green, height: 20)
         frontSections.append(section)
+        
+        let section2 = FrontSection()
+        section2.cellViewModels.append(ColorDummyViewModel(color: .blue, height: 1000))
+        section2.headerViewModel = ColorDummyViewModel(color: .gray, height: 20)
+        frontSections.append(section2)
+        
         delegate?.viewModelRefreshed(self)
     }
 }

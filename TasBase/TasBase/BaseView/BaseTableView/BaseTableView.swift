@@ -25,10 +25,16 @@ open class BaseTableView: UITableView {
         register(BaseTableCellView.self, forCellReuseIdentifier: "BaseTableCellView")
         register(BaseTableHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "BaseTableHeaderFooterView")
         self.dataSource = self
-        self.delegate = self
-    }
+        self.delegate = self    }
 }
 extension BaseTableView: BaseListViewModelDelegate {
+    public func viewModelRefreshedCells(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
+        reloadRows(at: indexPaths, with: animation)
+    }
+    
+    public func viewModelRefreshedSections(sections: IndexSet, with animation: UITableView.RowAnimation) {
+        reloadSections(sections, with: animation)
+    }
     
     public func viewModelRefreshed(_ viewModel: BaseListViewModel) {
         self.viewModel = viewModel
@@ -37,6 +43,17 @@ extension BaseTableView: BaseListViewModelDelegate {
 }
 
 extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
+    
+    public func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    public func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        guard let sourceViewModel = viewModel?.viewModel(at: sourceIndexPath), let destViewModel = viewModel?.viewModel(at: destinationIndexPath) else { return }
+        
+        viewModel?.frontSections[sourceIndexPath.section].cellViewModels[sourceIndexPath.row] = destViewModel
+        viewModel?.frontSections[destinationIndexPath.section].cellViewModels[destinationIndexPath.row] = sourceViewModel
+    }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return viewModel?.viewModel(at: indexPath)?.frontViewProperty.cellSize.height ?? 0
@@ -105,6 +122,8 @@ extension BaseListViewModel {
 
 public protocol BaseListViewModelDelegate: AnyObject {
     func viewModelRefreshed(_ viewModel: BaseListViewModel)
+    func viewModelRefreshedCells(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation)
+    func viewModelRefreshedSections(sections: IndexSet, with animation: UITableView.RowAnimation)
 }
 
 public class FrontSection {
