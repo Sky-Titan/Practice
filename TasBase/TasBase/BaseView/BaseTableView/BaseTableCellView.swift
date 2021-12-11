@@ -8,26 +8,9 @@
 import UIKit
 import TasUtility
 
-class BaseTableCellView: UITableViewCell {
+class BaseTableCellView: UITableViewCell, BaseListCellViewProtocol {
     
     var frontView: UIView?
-    
-    func setViewModel(_ viewModel: FrontViewModelProtocol) {
-        if let frontView = frontView as? FrontViewProtocol {
-            frontView.setViewModel(viewModel)
-        } else {
-            let viewClass = viewModel.frontViewProperty.className
-            let type = NSClassFromString(viewClass) as! UIView.Type
-            let view = type.init(frame: frame)
-            contentView.addSubview(view)
-            view.bindingToSuperview()
-            self.frontView = view
-            
-            if let view = view as? FrontViewProtocol {
-                view.setViewModel(viewModel)
-            }
-        }
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

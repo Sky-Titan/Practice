@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class BaseTableHeaderFooterView: UITableViewHeaderFooterView {
+public class BaseTableHeaderFooterView: UITableViewHeaderFooterView, BaseListCellViewProtocol {
     
     var frontView: UIView?
     
@@ -19,20 +19,4 @@ public class BaseTableHeaderFooterView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setViewModel(_ viewModel: FrontViewModelProtocol) {
-        if let frontView = frontView as? FrontViewProtocol {
-            frontView.setViewModel(viewModel)
-        } else {
-            let viewClass = viewModel.frontViewProperty.className
-            let type = NSClassFromString(viewClass) as! UIView.Type
-            let view = type.init(frame: frame)
-            contentView.addSubview(view)
-            view.bindingToSuperview()
-            self.frontView = view
-            
-            if let view = view as? FrontViewProtocol {
-                view.setViewModel(viewModel)
-            }
-        }
-    }
 }

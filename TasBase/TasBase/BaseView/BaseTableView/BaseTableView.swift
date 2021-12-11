@@ -70,7 +70,7 @@ extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let frontViewModel = viewModel?.viewModel(at: indexPath) else { fatalError() }
         let cell = tableView.dequeueReusableCell(withIdentifier: "BaseTableCellView", for: indexPath) as! BaseTableCellView
-        cell.setViewModel(frontViewModel)
+        cell.setViewModel(frontViewModel, to: cell.contentView)
         return cell
     }
 
@@ -82,14 +82,14 @@ extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let footer = viewModel?.frontSections[safe: section]?.footerViewModel else { return nil }
         let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "BaseTableHeaderFooterView") as! BaseTableHeaderFooterView
-        footerView.setViewModel(footer)
+        footerView.setViewModel(footer, to: footerView.contentView)
         return footerView
     }
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = viewModel?.frontSections[safe: section]?.headerViewModel else { return nil }
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "BaseTableHeaderFooterView") as! BaseTableHeaderFooterView
-        headerView.setViewModel(header)
+        headerView.setViewModel(header, to: headerView.contentView)
         return headerView
     }
     
