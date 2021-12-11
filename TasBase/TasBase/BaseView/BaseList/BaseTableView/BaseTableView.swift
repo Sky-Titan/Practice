@@ -22,19 +22,19 @@ open class BaseTableView: UITableView, BaseListViewProtocol {
     }
     
     private func doInit() {
-        register(BaseTableCellView.self, forCellReuseIdentifier: "BaseTableCellView")
-        register(BaseTableHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "BaseTableHeaderFooterView")
+        register(BaseTableCellView.self, forCellReuseIdentifier: BaseTableCellView.identifierStringForReuse)
+        register(BaseTableHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: BaseTableHeaderFooterView.identifierStringForReuse)
         self.dataSource = self
         self.delegate = self
     }
 }
 extension BaseTableView: BaseListViewModelDelegate {
-    public func viewModelRefreshedCells(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
-        reloadRows(at: indexPaths, with: animation)
+    public func viewModelRefreshedCells(at indexPaths: [IndexPath]) {
+        reloadRows(at: indexPaths, with: .top)
     }
     
-    public func viewModelRefreshedSections(sections: IndexSet, with animation: UITableView.RowAnimation) {
-        reloadSections(sections, with: animation)
+    public func viewModelRefreshedSections(sections: IndexSet) {
+        reloadSections(sections, with: .top)
     }
     
     public func viewModelRefreshed(_ viewModel: BaseListViewModel) {
@@ -70,7 +70,7 @@ extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let frontViewModel = viewModel?.viewModel(at: indexPath) else { fatalError() }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BaseTableCellView", for: indexPath) as! BaseTableCellView
+        let cell = tableView.dequeueReusableCell(withIdentifier: BaseTableCellView.identifierStringForReuse, for: indexPath) as! BaseTableCellView
         cell.setViewModel(frontViewModel, to: cell.contentView)
         return cell
     }
@@ -82,14 +82,14 @@ extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard let footer = viewModel?.frontSections[safe: section]?.footerViewModel else { return nil }
-        let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "BaseTableHeaderFooterView") as! BaseTableHeaderFooterView
+        let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: BaseTableHeaderFooterView.identifierStringForReuse) as! BaseTableHeaderFooterView
         footerView.setViewModel(footer, to: footerView.contentView)
         return footerView
     }
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = viewModel?.frontSections[safe: section]?.headerViewModel else { return nil }
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "BaseTableHeaderFooterView") as! BaseTableHeaderFooterView
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: BaseTableHeaderFooterView.identifierStringForReuse) as! BaseTableHeaderFooterView
         headerView.setViewModel(header, to: headerView.contentView)
         return headerView
     }
@@ -123,8 +123,8 @@ extension BaseListViewModel {
 
 public protocol BaseListViewModelDelegate: AnyObject {
     func viewModelRefreshed(_ viewModel: BaseListViewModel)
-    func viewModelRefreshedCells(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation)
-    func viewModelRefreshedSections(sections: IndexSet, with animation: UITableView.RowAnimation)
+    func viewModelRefreshedCells(at indexPaths: [IndexPath])
+    func viewModelRefreshedSections(sections: IndexSet)
 }
 
 public class FrontSection {

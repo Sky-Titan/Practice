@@ -9,11 +9,16 @@ import UIKit
 
 protocol BaseListCellViewProtocol: AnyObject {
     var frontView: UIView? { get set }
-    
     func setViewModel(_ viewModel: FrontViewModelProtocol, to superview: UIView)
+    static var identifierStringForReuse: String { get }
 }
 
 extension BaseListCellViewProtocol {
+    
+    static var identifierStringForReuse: String {
+        return String(describing: Self.self)
+    }
+    
     func setViewModel(_ viewModel: FrontViewModelProtocol, to superview: UIView) {
         if let frontView = frontView as? FrontViewProtocol {
             frontView.setViewModel(viewModel)

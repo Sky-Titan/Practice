@@ -13,6 +13,7 @@
 		AB94D755276469570026B2E6 /* BaseTableHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D754276469570026B2E6 /* BaseTableHeaderFooterView.swift */; };
 		AB94D7572764717E0026B2E6 /* BaseListCellViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D7562764717E0026B2E6 /* BaseListCellViewProtocol.swift */; };
 		AB94D75A276474760026B2E6 /* BaseListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D759276474760026B2E6 /* BaseListViewProtocol.swift */; };
+		AB94D75C27647C4E0026B2E6 /* BaseCollectionHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D75B27647C4E0026B2E6 /* BaseCollectionHeaderFooterView.swift */; };
 		ABBAF63F2754EFA400DF17C3 /* TasBase.docc in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF63E2754EFA400DF17C3 /* TasBase.docc */; };
 		ABBAF6452754EFA400DF17C3 /* TasBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF63A2754EFA400DF17C3 /* TasBase.framework */; };
 		ABBAF64A2754EFA400DF17C3 /* TasBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6492754EFA400DF17C3 /* TasBaseTests.swift */; };
@@ -62,6 +63,7 @@
 		AB94D754276469570026B2E6 /* BaseTableHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableHeaderFooterView.swift; sourceTree = "<group>"; };
 		AB94D7562764717E0026B2E6 /* BaseListCellViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListCellViewProtocol.swift; sourceTree = "<group>"; };
 		AB94D759276474760026B2E6 /* BaseListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListViewProtocol.swift; sourceTree = "<group>"; };
+		AB94D75B27647C4E0026B2E6 /* BaseCollectionHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionHeaderFooterView.swift; sourceTree = "<group>"; };
 		ABBAF63A2754EFA400DF17C3 /* TasBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TasBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBAF63D2754EFA400DF17C3 /* TasBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasBase.h; sourceTree = "<group>"; };
 		ABBAF63E2754EFA400DF17C3 /* TasBase.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TasBase.docc; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				AB94D75027645DD70026B2E6 /* BaseCollectionView.swift */,
 				AB94D75227645EA90026B2E6 /* BaseCollectionViewCell.swift */,
+				AB94D75B27647C4E0026B2E6 /* BaseCollectionHeaderFooterView.swift */,
 			);
 			path = BaseCollectionView;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB4ED019275F705100976E1B /* ViewManager.swift in Sources */,
+				AB94D75C27647C4E0026B2E6 /* BaseCollectionHeaderFooterView.swift in Sources */,
 				AB94D75A276474760026B2E6 /* BaseListViewProtocol.swift in Sources */,
 				AB94D7572764717E0026B2E6 /* BaseListCellViewProtocol.swift in Sources */,
 				ABBAF65C2754F1BC00DF17C3 /* BaseTableView.swift in Sources */,
