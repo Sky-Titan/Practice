@@ -10,6 +10,7 @@
 		AB4ED019275F705100976E1B /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4ED018275F705100976E1B /* ViewManager.swift */; };
 		AB94D75127645DD70026B2E6 /* BaseCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D75027645DD70026B2E6 /* BaseCollectionView.swift */; };
 		AB94D75327645EA90026B2E6 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D75227645EA90026B2E6 /* BaseCollectionViewCell.swift */; };
+		AB94D755276469570026B2E6 /* BaseTableHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D754276469570026B2E6 /* BaseTableHeaderFooterView.swift */; };
 		ABBAF63F2754EFA400DF17C3 /* TasBase.docc in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF63E2754EFA400DF17C3 /* TasBase.docc */; };
 		ABBAF6452754EFA400DF17C3 /* TasBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF63A2754EFA400DF17C3 /* TasBase.framework */; };
 		ABBAF64A2754EFA400DF17C3 /* TasBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6492754EFA400DF17C3 /* TasBaseTests.swift */; };
@@ -56,6 +57,7 @@
 		AB4ED018275F705100976E1B /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		AB94D75027645DD70026B2E6 /* BaseCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionView.swift; sourceTree = "<group>"; };
 		AB94D75227645EA90026B2E6 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB94D754276469570026B2E6 /* BaseTableHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableHeaderFooterView.swift; sourceTree = "<group>"; };
 		ABBAF63A2754EFA400DF17C3 /* TasBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TasBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBAF63D2754EFA400DF17C3 /* TasBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasBase.h; sourceTree = "<group>"; };
 		ABBAF63E2754EFA400DF17C3 /* TasBase.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TasBase.docc; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				ABBAF65B2754F1BC00DF17C3 /* BaseTableView.swift */,
 				ABC9A0D127563A6F002B3C3C /* BaseTableCellView.swift */,
+				AB94D754276469570026B2E6 /* BaseTableHeaderFooterView.swift */,
 			);
 			path = BaseTableView;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				ABC9A0D227563A6F002B3C3C /* BaseTableCellView.swift in Sources */,
 				ABE978A5276342AB00B4DADC /* ColorDummyViewModel.swift in Sources */,
 				ABBAF63F2754EFA400DF17C3 /* TasBase.docc in Sources */,
+				AB94D755276469570026B2E6 /* BaseTableHeaderFooterView.swift in Sources */,
 				AB94D75327645EA90026B2E6 /* BaseCollectionViewCell.swift in Sources */,
 				AB94D75127645DD70026B2E6 /* BaseCollectionView.swift in Sources */,
 				ABE978A6276342B400B4DADC /* ColorDummyView.swift in Sources */,

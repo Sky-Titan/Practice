@@ -20,7 +20,8 @@ class ListViewModel: BaseListViewModel {
             section.cellViewModels.append(ColorDummyViewModel(color: .blue, height: 150))
         }
         
-        
+        //section.headerViewModel = ColorDummyViewModel(color: .green, height: 20)
+        //section.footerViewModel = ColorDummyViewModel(color: .brown, height: 20)
         frontSections.append(section)
         delegate?.viewModelRefreshed(self)
     }

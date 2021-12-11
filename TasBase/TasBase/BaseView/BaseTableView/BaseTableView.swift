@@ -23,6 +23,7 @@ open class BaseTableView: UITableView {
     
     private func doInit() {
         register(BaseTableCellView.self, forCellReuseIdentifier: "BaseTableCellView")
+        register(BaseTableHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "BaseTableHeaderFooterView")
         self.dataSource = self
         self.delegate = self
     }
@@ -60,6 +61,30 @@ extension BaseTableView: UITableViewDataSource, UITableViewDelegate {
         guard let touchable = viewModel?.frontSections[indexPath.section].cellViewModels[indexPath.row] as? Touchable else { return }
         touchable.onTouch()
     }
+    
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard let footer = viewModel?.frontSections[safe: section]?.footerViewModel else { return nil }
+        let footerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "BaseTableHeaderFooterView") as! BaseTableHeaderFooterView
+        footerView.setViewModel(footer)
+        return footerView
+    }
+    
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = viewModel?.frontSections[safe: section]?.headerViewModel else { return nil }
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "BaseTableHeaderFooterView") as! BaseTableHeaderFooterView
+        headerView.setViewModel(header)
+        return headerView
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        guard let footer = viewModel?.frontSections[safe: section]?.footerViewModel else { return .zero }
+        return footer.frontViewProperty.cellSize.height
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard let header = viewModel?.frontSections[safe: section]?.headerViewModel else { return .zero }
+        return header.frontViewProperty.cellSize.height
+    }
 }
 
 public protocol Touchable: AnyObject {
@@ -83,6 +108,8 @@ public protocol BaseListViewModelDelegate: AnyObject {
 }
 
 public class FrontSection {
+    public var headerViewModel: FrontViewModelProtocol?
+    public var footerViewModel: FrontViewModelProtocol?
     public var cellViewModels: [FrontViewModelProtocol] = []
     
     public init() {
