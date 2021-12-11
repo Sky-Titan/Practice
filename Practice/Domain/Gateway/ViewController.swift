@@ -12,12 +12,7 @@ import TasExample
 class ViewController: TSViewController {
 
    
-    @IBOutlet weak var collectionView: BaseCollectionView!
-    let listViewModel = ListViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.viewModel = listViewModel
-        listViewModel.delegate = collectionView
-        listViewModel.resetModel()
     }
 }

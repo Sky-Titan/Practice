@@ -42,8 +42,6 @@ extension BaseCollectionView: BaseListViewModelDelegate {
     public func viewModelRefreshedSections(sections: IndexSet) {
         reloadSections(sections)
     }
-    
-    
 }
 
 extension BaseCollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -76,7 +74,6 @@ extension BaseCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: BaseCollectionHeaderFooterView.identifierStringForReuse, for: indexPath) as! BaseCollectionHeaderFooterView
-        
         
         if kind == UICollectionView.elementKindSectionHeader, let header = viewModel?.frontSections[safe: indexPath.section]?.headerViewModel {
             cell.setViewModel(header, to: cell)
