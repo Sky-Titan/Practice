@@ -12,6 +12,7 @@
 		AB94D75327645EA90026B2E6 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D75227645EA90026B2E6 /* BaseCollectionViewCell.swift */; };
 		AB94D755276469570026B2E6 /* BaseTableHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D754276469570026B2E6 /* BaseTableHeaderFooterView.swift */; };
 		AB94D7572764717E0026B2E6 /* BaseListCellViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D7562764717E0026B2E6 /* BaseListCellViewProtocol.swift */; };
+		AB94D75A276474760026B2E6 /* BaseListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94D759276474760026B2E6 /* BaseListViewProtocol.swift */; };
 		ABBAF63F2754EFA400DF17C3 /* TasBase.docc in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF63E2754EFA400DF17C3 /* TasBase.docc */; };
 		ABBAF6452754EFA400DF17C3 /* TasBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABBAF63A2754EFA400DF17C3 /* TasBase.framework */; };
 		ABBAF64A2754EFA400DF17C3 /* TasBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBAF6492754EFA400DF17C3 /* TasBaseTests.swift */; };
@@ -60,6 +61,7 @@
 		AB94D75227645EA90026B2E6 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB94D754276469570026B2E6 /* BaseTableHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableHeaderFooterView.swift; sourceTree = "<group>"; };
 		AB94D7562764717E0026B2E6 /* BaseListCellViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListCellViewProtocol.swift; sourceTree = "<group>"; };
+		AB94D759276474760026B2E6 /* BaseListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListViewProtocol.swift; sourceTree = "<group>"; };
 		ABBAF63A2754EFA400DF17C3 /* TasBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TasBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBAF63D2754EFA400DF17C3 /* TasBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TasBase.h; sourceTree = "<group>"; };
 		ABBAF63E2754EFA400DF17C3 /* TasBase.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = TasBase.docc; sourceTree = "<group>"; };
@@ -129,9 +131,8 @@
 		AB3319112763413B00B297F3 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
-				AB94D74F27645DC70026B2E6 /* BaseCollectionView */,
 				ABBAF6592754F0CB00DF17C3 /* BaseXibView.swift */,
-				ABBAF65D2754F1D500DF17C3 /* BaseTableView */,
+				AB94D758276473860026B2E6 /* BaseList */,
 			);
 			path = BaseView;
 			sourceTree = "<group>";
@@ -151,6 +152,17 @@
 				AB94D75227645EA90026B2E6 /* BaseCollectionViewCell.swift */,
 			);
 			path = BaseCollectionView;
+			sourceTree = "<group>";
+		};
+		AB94D758276473860026B2E6 /* BaseList */ = {
+			isa = PBXGroup;
+			children = (
+				AB94D7562764717E0026B2E6 /* BaseListCellViewProtocol.swift */,
+				AB94D759276474760026B2E6 /* BaseListViewProtocol.swift */,
+				AB94D74F27645DC70026B2E6 /* BaseCollectionView */,
+				ABBAF65D2754F1D500DF17C3 /* BaseTableView */,
+			);
+			path = BaseList;
 			sourceTree = "<group>";
 		};
 		ABBAF6302754EFA400DF17C3 = {
@@ -199,7 +211,6 @@
 				ABBAF65B2754F1BC00DF17C3 /* BaseTableView.swift */,
 				ABC9A0D127563A6F002B3C3C /* BaseTableCellView.swift */,
 				AB94D754276469570026B2E6 /* BaseTableHeaderFooterView.swift */,
-				AB94D7562764717E0026B2E6 /* BaseListCellViewProtocol.swift */,
 			);
 			path = BaseTableView;
 			sourceTree = "<group>";
@@ -324,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB4ED019275F705100976E1B /* ViewManager.swift in Sources */,
+				AB94D75A276474760026B2E6 /* BaseListViewProtocol.swift in Sources */,
 				AB94D7572764717E0026B2E6 /* BaseListCellViewProtocol.swift in Sources */,
 				ABBAF65C2754F1BC00DF17C3 /* BaseTableView.swift in Sources */,
 				ABC9A0D227563A6F002B3C3C /* BaseTableCellView.swift in Sources */,

@@ -7,7 +7,9 @@
 
 import UIKit
 
-public class BaseCollectionViewCell: UICollectionViewCell {
+public class BaseCollectionViewCell: UICollectionViewCell, BaseListCellViewProtocol {
+    
+    var frontView: UIView?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)

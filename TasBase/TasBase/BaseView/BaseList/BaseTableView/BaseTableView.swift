@@ -7,7 +7,7 @@
 
 import UIKit
 
-open class BaseTableView: UITableView {
+open class BaseTableView: UITableView, BaseListViewProtocol {
     
     public var viewModel: BaseListViewModel?
     
@@ -25,7 +25,8 @@ open class BaseTableView: UITableView {
         register(BaseTableCellView.self, forCellReuseIdentifier: "BaseTableCellView")
         register(BaseTableHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: "BaseTableHeaderFooterView")
         self.dataSource = self
-        self.delegate = self    }
+        self.delegate = self
+    }
 }
 extension BaseTableView: BaseListViewModelDelegate {
     public func viewModelRefreshedCells(at indexPaths: [IndexPath], with animation: UITableView.RowAnimation) {
