@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Practice" customModuleProvider="target">
             <connections>
+                <outlet property="circleProgressView" destination="Xyz-FG-EQ9" id="fwh-ll-aHO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="g0u-q9-ZRs"/>
             </connections>
         </placeholder>
@@ -18,8 +19,46 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyz-FG-EQ9" customClass="CircleProgressView" customModule="TasExample">
+                    <rect key="frame" x="87" y="328" width="240" height="240"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="240" id="Hqw-HC-TCX"/>
+                        <constraint firstAttribute="width" constant="240" id="Z6D-61-S6W"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                            <real key="value" value="0.69999999999999996"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                            <color key="value" red="0.4329207685" green="1" blue="0.050566374189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="progressBackgroundColor">
+                            <color key="value" red="0.4329207685" green="1" blue="0.050566374189999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="progressWidth">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clockwise" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xr-kf-Qtp">
+                    <rect key="frame" x="174" y="708" width="67" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="click:" destination="-1" eventType="touchUpInside" id="POY-iP-GDG"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Xyz-FG-EQ9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="2AE-3s-7zp"/>
+                <constraint firstItem="Xyz-FG-EQ9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Tnx-RR-fN0"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="92"/>
         </view>
     </objects>

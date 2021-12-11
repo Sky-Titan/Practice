@@ -15,24 +15,39 @@ public class CircleProgressView: UIView {
     public var progressColor: UIColor? {
         didSet {
             circleLayer.progressColor = progressColor
+            circleLayer.setNeedsDisplay()
         }
     }
     @IBInspectable
     public var progressBackgroundColor: UIColor? {
         didSet {
             circleLayer.progressBackgroundColor = progressBackgroundColor
+            circleLayer.setNeedsDisplay()
         }
     }
     @IBInspectable
     public var progress: CGFloat = 0 {
         didSet {
             circleLayer.progress = progress
+            circleLayer.setNeedsDisplay()
         }
     }
     @IBInspectable
     public var progressWidth: CGFloat = 0 {
         didSet {
             circleLayer.progressWidth = progressWidth
+            circleLayer.setNeedsDisplay()
+        }
+    }
+    @IBInspectable
+    public var clockwise: Bool {
+        set {
+            circleLayer.clockwise = !newValue
+            circleLayer.setNeedsDisplay()
+        }
+        
+        get {
+            return !circleLayer.clockwise
         }
     }
     
@@ -52,6 +67,9 @@ public class CircleProgressView: UIView {
         super.init(coder: coder)
     }
     
+    public func startProgressAnimate() {
+        circleLayer.animate()
+    }
 }
 
 class CircleLayer: CALayer {
@@ -60,54 +78,65 @@ class CircleLayer: CALayer {
     public var progressColor: UIColor?
     public var progressBackgroundColor: UIColor?
     public var progress: CGFloat = 0
-    
-    private var progressBackgroundLayer = CAShapeLayer()
-    private var progressLayer = CAShapeLayer()
-    private var centerLayer = CAShapeLayer()
-    
+    public var clockwise: Bool = false
+    public var progressLayer: CAShapeLayer?
+    var center: CGPoint {
+        return CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+    }
+    var radius: CGFloat {
+        return min(frame.size.width, frame.size.height) / 2
+    }
     
     override func draw(in ctx: CGContext) {
-        print("draw")
-        /*
-        let center = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
-        
-        let radius = min(frame.size.width, frame.size.height) / 2
-        
-        let centerPath = UIBezierPath(arcCenter: center, radius: radius - progressWidth / 2, startAngle: Degrees(0).toRadians(), endAngle: Degrees(360).toRadians(), clockwise: true)
-        
-        centerLayer.position = center
-        centerLayer.frame = bounds
-        centerLayer.path = centerPath.cgPath
-        centerLayer.fillColor = UIColor.white.cgColor
-        centerLayer.setNeedsDisplay()
-        
-        let progressBackgroundPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: Degrees(0).toRadians(), endAngle: Degrees(360).toRadians(), clockwise: true)
-        
-        progressBackgroundLayer.position = center
-        progressBackgroundLayer.frame = bounds
-        progressBackgroundLayer.path = progressBackgroundPath.cgPath
-        progressBackgroundLayer.fillColor = .none
-        progressBackgroundLayer.lineWidth = progressWidth
-        progressBackgroundLayer.strokeColor = progressBackgroundColor?.cgColor
-        progressBackgroundLayer.lineCap = .round
-        progressBackgroundLayer.setNeedsDisplay()
-        
-        let progressPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: Degrees(0 - 90).toRadians(), endAngle: Degrees((360 - 90) * progress).toRadians(), clockwise: true)
-        
-        progressLayer.position = center
-        progressLayer.frame = bounds
-        progressLayer.path = progressPath.cgPath
-        progressLayer.fillColor = .none
-        progressLayer.lineWidth = progressWidth
-        progressLayer.strokeColor = progressColor?.cgColor
-        progressLayer.lineCap = .round
-        progressLayer.setNeedsDisplay()
-        
-        addSublayer(centerLayer)
-        addSublayer(progressBackgroundLayer)
-        addSublayer(progressLayer)
-        
         super.draw(in: ctx)
-         */
+        
+        addCenterCircle(ctx)
+        addProgressBackground(ctx)
+        
+        if progressLayer == nil {
+            let progressLayer = CAShapeLayer()
+            self.progressLayer = progressLayer
+        
+            setProgressLayerStyle()
+            addSublayer(progressLayer)
+        } else {
+            setProgressLayerStyle()
+        }
+    }
+    
+    private func addCenterCircle(_ ctx: CGContext) {
+        ctx.addArc(center: center, radius: radius - progressWidth / 2, startAngle: Degrees(0).toRadians(), endAngle: Degrees(360).toRadians(), clockwise: clockwise)
+        
+        ctx.setFillColor(UIColor.white.cgColor)
+        ctx.fillPath()
+    }
+    
+    private func addProgressBackground(_ ctx: CGContext) {
+        ctx.addArc(center: center, radius: radius - progressWidth / 2, startAngle: Degrees(0).toRadians(), endAngle: Degrees(360).toRadians(), clockwise: clockwise)
+        ctx.setLineWidth(progressWidth)
+        ctx.setStrokeColor(progressBackgroundColor?.cgColor ?? UIColor.white.cgColor)
+        ctx.strokePath()
+        ctx.fillPath()
+    }
+    
+    private func setProgressLayerStyle() {
+        progressLayer?.path = UIBezierPath(arcCenter: center, radius: radius - progressWidth / 2, startAngle: Degrees(-90).toRadians(), endAngle: Degrees(360 - 90).toRadians(), clockwise: clockwise).cgPath
+        progressLayer?.lineCap = .round
+        progressLayer?.lineWidth = progressWidth
+        progressLayer?.fillColor = UIColor.clear.cgColor
+        progressLayer?.strokeColor = progressColor?.cgColor
+        progressLayer?.strokeStart = 0
+        progressLayer?.strokeEnd = progress
+        progressLayer?.setNeedsDisplay()
+    }
+    
+    func animate() {
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0
+        animation.toValue = progress
+        animation.repeatCount = 1
+        animation.duration = 0.5
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        progressLayer?.add(animation, forKey: "StrokeAnimation")
     }
 }
