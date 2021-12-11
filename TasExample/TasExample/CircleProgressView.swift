@@ -86,6 +86,8 @@ class CircleLayer: CALayer {
     var radius: CGFloat {
         return min(frame.size.width, frame.size.height) / 2
     }
+    private let startAngle: Radians = Degrees(0).toRadians()
+    private let endAngle: Radians = Degrees(360).toRadians()
     
     override func draw(in ctx: CGContext) {
         super.draw(in: ctx)
@@ -105,14 +107,14 @@ class CircleLayer: CALayer {
     }
     
     private func addCenterCircle(_ ctx: CGContext) {
-        ctx.addArc(center: center, radius: radius - progressWidth / 2, startAngle: Degrees(0).toRadians(), endAngle: Degrees(360).toRadians(), clockwise: clockwise)
+        ctx.addArc(center: center, radius: radius - progressWidth / 2, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
         
         ctx.setFillColor(UIColor.white.cgColor)
         ctx.fillPath()
     }
     
     private func addProgressBackground(_ ctx: CGContext) {
-        ctx.addArc(center: center, radius: radius - progressWidth / 2, startAngle: Degrees(0).toRadians(), endAngle: Degrees(360).toRadians(), clockwise: clockwise)
+        ctx.addArc(center: center, radius: radius - progressWidth / 2, startAngle: startAngle, endAngle: endAngle, clockwise: clockwise)
         ctx.setLineWidth(progressWidth)
         ctx.setStrokeColor(progressBackgroundColor?.cgColor ?? UIColor.white.cgColor)
         ctx.strokePath()
@@ -120,7 +122,7 @@ class CircleLayer: CALayer {
     }
     
     private func setProgressLayerStyle() {
-        progressLayer?.path = UIBezierPath(arcCenter: center, radius: radius - progressWidth / 2, startAngle: Degrees(-90).toRadians(), endAngle: Degrees(360 - 90).toRadians(), clockwise: clockwise).cgPath
+        progressLayer?.path = UIBezierPath(arcCenter: center, radius: radius - progressWidth / 2, startAngle: startAngle - Degrees(90).toRadians(), endAngle: endAngle - Degrees(90).toRadians(), clockwise: clockwise).cgPath
         progressLayer?.lineCap = .round
         progressLayer?.lineWidth = progressWidth
         progressLayer?.fillColor = UIColor.clear.cgColor
@@ -135,7 +137,7 @@ class CircleLayer: CALayer {
         animation.fromValue = 0
         animation.toValue = progress
         animation.repeatCount = 1
-        animation.duration = 0.5
+        animation.duration = 0.7
         animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         progressLayer?.add(animation, forKey: "StrokeAnimation")
     }
